@@ -21,6 +21,16 @@ const useFirebase = ()=>{
             setUser({})
           })
     }
+    useEffect(()=>{
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                setUser(user)   
+            } else {
+              setUser({})
+            }
+          });
+    },[])
+
 
     return{
         googleSignIn,

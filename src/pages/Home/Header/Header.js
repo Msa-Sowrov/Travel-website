@@ -39,9 +39,9 @@ const Header = () => {
           </ul>
         </li>
       </ul>
-      <form class="d-flex">
+      <form class="d-flex align-items-center">
         {
-          user ?
+          user.email ?
           <button onClick={logOut} class="btn btn-outline-success" type="submit">Logout</button>
           :
       <Link to="/login">
@@ -49,7 +49,7 @@ const Header = () => {
       </Link>
         }
 
-        <span>Sign in as:</span>
+        <span className='mx-2'>Sign in as:{user.displayName}</span>
       </form>
     </div>
   </div>

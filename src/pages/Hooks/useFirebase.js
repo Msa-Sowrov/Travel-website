@@ -5,15 +5,12 @@ import appInit from "../Login/firebase.init";
 const useFirebase = ()=>{
     appInit()
     const [user, setUser] = useState({})
-
     const auth = getAuth();
 
     const provider = new GoogleAuthProvider();
     const googleSignIn=()=>{
-        signInWithPopup(auth, provider)
-        .then(result=>{
-            setUser(result.user)
-        })
+        return signInWithPopup(auth, provider)
+        
     }
     const logOut=()=>{
         signOut(auth)

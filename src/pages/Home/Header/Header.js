@@ -1,55 +1,56 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 import useFirebase from '../../Hooks/useFirebase';
 import './Header.css'
 const Header = () => {
 
-  const {user, logOut} = useFirebase()
+  const {user, logOut} = useAuth()
     return (
         <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-own">
-  <div class="container">
-    <Link class="navbar-brand" to="/homeAll">
+            <nav className="navbar navbar-expand-lg navbar-light bg-own">
+  <div className="container">
+    <Link className="navbar-brand" to="/homeAll">
         <img src="https://i.ibb.co/51m13YX/pngegg-13.png" alt="" />
         <span>TripIt</span>
     </Link>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <Link class="nav-link active" aria-current="page" to="/homeAll">Home</Link>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/homeAll">Home</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" href="#">All Trip</Link>
+        <li className="nav-item">
+          <Link className="nav-link" to="/alltrip">All Trip</Link>
         </li>
-        <li class="nav-item">
-          <Link class="nav-link" href="#">My Trip</Link>
+        <li className="nav-item">
+          <Link className="nav-link" to='/mytrip'>My Trip</Link>
         </li>
-        <li class="nav-item dropdown">
-          <Link class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <li className="nav-item dropdown">
+          <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Admin
           </Link>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><Link class="dropdown-item" href="#">Manege Trip</Link></li>
-            <li><Link class="dropdown-item" href="#">Add Trip</Link></li>
-            <li><hr class="dropdown-divider"/></li>
-            <li><Link class="dropdown-item" href="#">Something else here</Link></li>
+          <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><Link className="dropdown-item" to='/manage'>Manege Trip</Link></li>
+            <li><Link className="dropdown-item" to='/add'>Add Trip</Link></li>
+            <li><hr className="dropdown-divider"/></li>
+            <li><Link className="dropdown-item" to="/">Something else here</Link></li>
           </ul>
         </li>
       </ul>
-      <form class="d-flex align-items-center">
+      <form className="d-flex align-items-center">
         {
           user.email ?
-          <button onClick={logOut} class="btn btn-outline-success" type="submit">Logout</button>
+          <button onClick={logOut} className="btn btn-outline-success" type="submit">Logout</button>
           :
       <Link to="/login">
-          <button class="btn btn-outline-success" type="submit">Signin</button>
+          <button className="btn btn-outline-success" type="submit">Signin</button>
       </Link>
         }
 
-        <span className='mx-2'>Sign in as:{user.displayName}</span>
+        <span className='mx-2'>Sign in as:{user?.displayName}</span>
       </form>
     </div>
   </div>

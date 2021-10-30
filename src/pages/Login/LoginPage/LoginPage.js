@@ -1,8 +1,19 @@
 import React from 'react';
+import { useHistory, useLocation } from 'react-router';
+import useAuth from '../../Hooks/useAuth';
 import useFirebase from '../../Hooks/useFirebase';
 import './LoginPage.css'
 const LoginPage = () => {
-    const {googleSignIn} = useFirebase();
+    const {googleSignIn} = useAuth();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri =location.state?.from || '/'
+    const handleGoogleLogin=()=>{
+        googleSignIn()
+        .then(result=>{
+            history.push(redirect_uri)
+        })
+    }
     return (
         <div className="container">
             <div className="row gap-5 d-flex align-items-center">
@@ -12,7 +23,7 @@ const LoginPage = () => {
 
                     <p>You can use your Google Account to sign in to third-party apps and services. You won't have to remember individual usernames and passwords for each account.</p>
                     <div className="text-center">
-                        <button onClick={googleSignIn} className='bg-own'><img src="https://i.ibb.co/YBP0yd2/pngegg-17.png" alt="" /> Signin with google</button>
+                        <button onClick={handleGoogleLogin} className='bg-own'><img src="https://i.ibb.co/YBP0yd2/pngegg-17.png" alt="" /> Signin with google</button>
 
                     </div>
                 </div>

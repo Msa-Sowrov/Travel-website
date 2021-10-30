@@ -5,12 +5,10 @@ import './Trips.css'
 const Trips = () => {
     const [trips, setTrips] = useState([])
     useEffect(()=>{
-        fetch('./trip.json')
+        fetch('http://localhost:5000/trips')
         .then(res=>res.json())
         .then(data=> setTrips(data))
     },[])
-
-    console.log(trips)
     return (
         <div>
 
@@ -19,7 +17,7 @@ const Trips = () => {
             <h1>Our Service</h1>
                 <div className="row gap-4 d-flex justify-content-center">
                 {
-                    trips.map(trip => <Trip trip={trip}></Trip>)
+                    trips.map(trip => <Trip key={trip._id} trip={trip}></Trip>)
                 }
                 </div>
             </div>

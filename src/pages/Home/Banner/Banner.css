@@ -1,0 +1,11 @@
+.banner{
+    background-image: linear-gradient(#e1b2ff71, #faf2b571), url('https://i.ibb.co/f0mzHKd/bg.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.banner-title h1 {
+    font-weight: 700;
+}
+.banner-title {
+    color: white;
+}

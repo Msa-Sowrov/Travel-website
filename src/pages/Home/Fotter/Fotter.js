@@ -23,7 +23,7 @@ const Fotter = () => {
                          <h2>Useful Link</h2>
                          <Link to="/">Home</Link><br/>
                          <Link to="/alltrip">All Trip</Link><br/>
-                         <Link to="/">About</Link><br/>
+                         <Link to="/about">About</Link><br/>
                          <Link to="/login">LogIN</Link><br/>
                          
 

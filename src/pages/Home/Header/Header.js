@@ -10,7 +10,7 @@ const Header = () => {
         <div className="header">
             <nav className="navbar navbar-expand-lg navbar-light bg-own">
   <div className="container">
-    <Link className="navbar-brand" to="/homeAll">
+    <Link className="navbar-brand" to="/">
         <img src="https://i.ibb.co/51m13YX/pngegg-13.png" alt="" />
         <span className="fw-bold">TripIt</span>
     </Link>

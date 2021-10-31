@@ -7,26 +7,34 @@ const Header = () => {
 
   const {user, logOut} = useAuth()
     return (
-        <div>
+        <div className="header">
             <nav className="navbar navbar-expand-lg navbar-light bg-own">
   <div className="container">
     <Link className="navbar-brand" to="/homeAll">
         <img src="https://i.ibb.co/51m13YX/pngegg-13.png" alt="" />
-        <span>TripIt</span>
+        <span className="fw-bold">TripIt</span>
     </Link>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/homeAll">Home</Link>
+          <Link className="nav-link" to="/alltrip">Tours</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to="/alltrip">All Trip</Link>
+          <Link className="nav-link" to="/contact">Contact</Link>
         </li>
         <li className="nav-item">
-          <Link className="nav-link" to='/mytrip'>My Trip</Link>
+          <Link className="nav-link" to="/about">About</Link>
+        </li>
+        {
+
+          user.email&&
+          <>
+          <li className="nav-item">
+          <Link className="nav-link" to='/mytrip'>My Tour</Link>
         </li>
         <li className="nav-item dropdown">
           <Link className="nav-link dropdown-toggle" to='/' id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -39,6 +47,11 @@ const Header = () => {
             <li><Link className="dropdown-item" to="/">Something else here</Link></li>
           </ul>
         </li>
+          </>
+
+        }
+        
+        
       </ul>
       <form className="d-flex align-items-center">
         {

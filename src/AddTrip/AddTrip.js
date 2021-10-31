@@ -12,13 +12,18 @@ const AddTrip = () => {
                 },
                 body:JSON.stringify(data)
             })
+            .then(res=>res.json())
+            .then(result=>{
+                reset()
+            })
     }
     return (
         <div>
             <div className="container">
-                <div className="row">
+                <div className="row d-flex align-items-center">
 
                     <div className="col-md-6 col-12">
+                        <h1>Add More Tours</h1>
                         <form className="my-form" onSubmit={handleSubmit(onSubmit)}>
                             <input {...register("name", { required: true, maxLength: 20 })} placeholder="name" />
                             <input {...register("img") } placeholder="img url 420x300" />

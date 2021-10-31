@@ -2,10 +2,10 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
-            <div className="container">
+        <div className="about">
+            <div className="container ">
                 <div className="text-center">
-                <h1 className="title">About Us</h1>
+                <h1 className="title py-4">About Us</h1>
 
                 </div>
                 <div className="row">

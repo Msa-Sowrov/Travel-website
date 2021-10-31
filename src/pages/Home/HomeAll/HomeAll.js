@@ -1,4 +1,5 @@
 import React from 'react';
+import Contact from '../../../Contact/Contact';
 import About from '../About/About';
 import Banner from '../Banner/Banner';
 import Fotter from '../Fotter/Fotter';
@@ -11,7 +12,9 @@ const HomeAll = () => {
             <Header></Header>
             <Banner></Banner>
             <Trips></Trips>
+            <Contact></Contact>
             <About></About>
+
             <Fotter></Fotter>
         </div>
     );

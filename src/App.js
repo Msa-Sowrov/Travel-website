@@ -12,6 +12,8 @@ import ManageTrip from './ManageTrip/ManageTrip';
 import AddTrip from './AddTrip/AddTrip';
 import NotFound from './pages/NotFound/NotFound';
 import Fotter from './pages/Home/Fotter/Fotter';
+import Contact from './Contact/Contact';
+import About from './pages/Home/About/About';
 
 function App() {
   return (
@@ -28,6 +30,16 @@ function App() {
           <Route path='/alltrip'>
             <Header></Header>
             <Trips></Trips>
+            <Fotter></Fotter>
+          </Route>
+          <Route path='/about'>
+            <Header></Header>
+              <About></About>
+            <Fotter></Fotter>
+          </Route>
+          <Route path='/contact'>
+            <Header></Header>
+            <Contact></Contact>
             <Fotter></Fotter>
           </Route>
           <PrivateRouter path="/book:id">

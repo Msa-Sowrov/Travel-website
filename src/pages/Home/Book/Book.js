@@ -15,7 +15,7 @@ const Book = () => {
     const [trips, setTrips] = useState([])
     
     useEffect(()=>{
-        fetch('http://localhost:5000/trips')
+        fetch('https://evening-reaches-09625.herokuapp.com/trips')
         .then(res=>res.json())
         .then(data=>setTrips(data))
     },[])
@@ -30,7 +30,7 @@ const Book = () => {
         bookedTrip.email = data.email;
         bookedTrip.departure = data.departure;
         bookedTrip.return = data.return;
-        fetch('http://localhost:5000/booked', {
+        fetch('https://evening-reaches-09625.herokuapp.com/booked', {
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -66,7 +66,7 @@ const Book = () => {
                             <span>Return Date:</span>
                             <input type="date" {...register("return", { require: true })} placeholder="Return Date"/>
                             <span className="text-danger">To Book this Tour Please do Submit this form. Thank you.</span>
-                            <input className="bg-own" type="submit" />
+                            <input className="my-btn" type="submit" />
                     </form>
 
                     </div>

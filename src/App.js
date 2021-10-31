@@ -45,6 +45,7 @@ function App() {
           <PrivateRouter path="/book:id">
             <Header></Header>
             <Book></Book>
+            <Fotter></Fotter>
           </PrivateRouter>
           <PrivateRouter path="/mytrip">
             <Header></Header>

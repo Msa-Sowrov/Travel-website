@@ -23,7 +23,7 @@ const LoginPage = () => {
 
                     <p>You can use your Google Account to sign in to third-party apps and services. You won't have to remember individual usernames and passwords for each account.</p>
                     <div className="text-center">
-                        <button onClick={handleGoogleLogin} className='bg-own'><img src="https://i.ibb.co/YBP0yd2/pngegg-17.png" alt="" /> Signin with google</button>
+                        <button className="my-btn" onClick={handleGoogleLogin} className='bg-own'><img src="https://i.ibb.co/YBP0yd2/pngegg-17.png" alt="" /> Signin with google</button>
 
                     </div>
                 </div>

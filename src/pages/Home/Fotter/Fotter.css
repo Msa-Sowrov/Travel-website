@@ -1,6 +1,10 @@
 .body{
+    /* margin-top: 400px; */
     position: relative;
     height: 120vh;
+}
+.fot{
+    margin-left: 15px;
 }
 .footerImg{
     margin: 0%;
@@ -9,6 +13,7 @@
     bottom: 200px;
 }
 .footer{
+
     margin: 0%;
     background-color: black;
     color: white;

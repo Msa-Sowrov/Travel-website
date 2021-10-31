@@ -2,10 +2,11 @@ import React from 'react';
 
 const MyPlan = ({trip}) => {
     const {img,status, name, desf, email, _id, departure}=trip;
+
     const deleteTrip = (id)=>{
        const confirm = window.confirm('Are you sure to cancle your trip?')
        if(confirm){
-        const url = `http://localhost:5000/bookedTri/${id}`
+        const url = `https://evening-reaches-09625.herokuapp.com/bookedTri/${id}`
         fetch(url,{
             method:'delete'
         })
@@ -22,8 +23,7 @@ const MyPlan = ({trip}) => {
     return (
         <div className="my-card card col-md-3 col-12">
         <div className="">
-        <img className="img-fluid" src={img} alt="" />
-
+         <img className="img-fluid" src={img} alt="" />
         </div>
         <div className='card-body'>
         <h4>{name}</h4>
@@ -33,7 +33,7 @@ const MyPlan = ({trip}) => {
         <p>Departure: {departure}</p>
         </div>
         <div className="card-footer">
-            <button onClick={()=>{deleteTrip(_id)}}>Cancel the trip</button>
+            <button className="my-btn" onClick={()=>{deleteTrip(_id)}}> Cancel the Trip</button>
         </div>
 
     </div>

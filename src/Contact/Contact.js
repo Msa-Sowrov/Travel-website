@@ -22,7 +22,7 @@ const Contact = () => {
                             <input {...register("name", { required: true, maxLength: 20 })} placeholder="your full name" />
                             <input {...register("email") } placeholder="Email" />
                             <textarea {...register("description")} placeholder="Your messege"/>
-                            <input type="submit" />
+                            <input className="my-btn" type="submit" />
                         </form>
  
                             </div>

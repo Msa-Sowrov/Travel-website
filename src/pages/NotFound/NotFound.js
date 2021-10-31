@@ -7,7 +7,7 @@ const NotFound = () => {
             <img className="" src="https://i.ibb.co/nBtvJnn/404.jpg" alt="" />
             <br/>
             <Link to="/">
-               <button className="bg-own">Go Back To Home</button>
+               <button className="my-btn">Go Back To Home</button>
             </Link>
         </div>
     );

@@ -15,7 +15,7 @@ const Trip = ({trip}) => {
             <p>{desf}</p>
             </div>
             <Link className="card-footer" to={`/book${_id}`}>
-                <button >Book it</button>
+                <button className="my-btn">Book it</button>
             </Link>
 
         </div>

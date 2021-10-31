@@ -3,7 +3,7 @@ import './ManageTrip.css'
 const ManageTrip = () => {
     const [allTrip, setAllTrip] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/bookedTrip')
+        fetch('https://evening-reaches-09625.herokuapp.com/bookedTrip')
         .then(res=>res.json())
         .then(data=>setAllTrip(data))
     },[allTrip])
@@ -11,7 +11,7 @@ const ManageTrip = () => {
     const deleteTrip = (id)=>{
       const confirm = window.confirm('Are you sure to cancle your trip?')
       if(confirm){
-       const url = `http://localhost:5000/bookedTri/${id}`
+       const url = `https://evening-reaches-09625.herokuapp.com/bookedTri/${id}`
        fetch(url,{
            method:'delete'
        })
@@ -29,8 +29,7 @@ const ManageTrip = () => {
     const approve =(id, upStatus)=>{
         let current = allTrip.find(trip=>trip._id===id)
         current.status = upStatus;
-        console.log(current)
-        const url = `http://localhost:5000/bookedTrip${id}`
+        const url = `https://evening-reaches-09625.herokuapp.com/bookedTrip${id}`
         fetch(url, {
             method:'put',
             headers:{
@@ -43,7 +42,7 @@ const ManageTrip = () => {
     return (
         <div className="manageTrip">
             <div className="container table-responsive">
-            <table class="table">
+            <table className="table">
   <thead>
     <tr>
       <th scope="col">#Places</th>
@@ -60,9 +59,9 @@ const ManageTrip = () => {
         <td>{trip.email}</td>
         <td className=" text-danger fw-bold">{trip.status}</td>
         <td className="control">
-        <button onClick={()=>approve(trip._id, "Approved")}><i class="far fa-check-circle"></i></button>
-        <button onClick={()=>approve(trip._id, "Cancled")}> <i class="far fa-window-close"></i></button>
-        <button onClick={()=>deleteTrip(trip._id)}><i class="fas fa-trash"></i></button>
+        <button onClick={()=>approve(trip._id, "Approved")}><i className="far fa-check-circle"></i></button>
+        <button onClick={()=>approve(trip._id, "Cancled")}> <i className="far fa-window-close"></i></button>
+        <button onClick={()=>deleteTrip(trip._id)}><i className="fas fa-trash"></i></button>
         </td>
       </tr> 
     )

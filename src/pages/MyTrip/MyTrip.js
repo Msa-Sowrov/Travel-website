@@ -15,17 +15,31 @@ const MyTrip = () => {
 
     return (
         <div>
-          <div className="trips">
-            <div className="container">
-            <h1>Our Service</h1>
-                <div className="row gap-4 d-flex justify-content-center">
-                {
-                    trips.map(trip=> <MyPlan key={trip._id} trip={trip}></MyPlan> )
-                }
+            {
+                trips.length ? 
+                
+                <div className=" ">
+                <div className="container">
+                    <div className="text-center my-5">
+                <h1>Your Next Tour with us..</h1>
+    
+                    </div>
+                    <div className="row gap-4 d-flex justify-content-center">
+                    {
+                        trips.map(trip=> <MyPlan key={trip._id} trip={trip}></MyPlan> )
+                    }
+                    </div>
                 </div>
             </div>
-        </div>
-   
+                     
+                :
+                <div className="text-center my-5">
+                <h1>Sorry..No Tour plane Availble.</h1>
+                
+    
+                    </div>         
+            }
+          
         </div>
     );
 };

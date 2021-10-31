@@ -3,7 +3,6 @@ import './Book.css'
 import { ObjectID } from 'bson';
 import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
-import { Placeholder } from 'react-bootstrap';
 import useAuth from '../../Hooks/useAuth';
 import { useState } from 'react';
 import { useEffect } from 'react';
@@ -47,8 +46,9 @@ const Book = () => {
     } 
     return (
         <div>
-
-            <h1>this is booking page </h1>
+            <div className="text-center">
+                <h1 className="my-5">Lets Go For A Stress Reliver Tour</h1>
+            </div>
             <div className="container">
                 <div className="row">
                     <div className="col-md-6 col-12">
@@ -56,7 +56,8 @@ const Book = () => {
                     </div>
                     <div className="col-md-6 col-12">
                     <form className="my-form" onSubmit={handleSubmit(onSubmit)}>
-                            <h2>Lets Explore: </h2>
+                            <h2>Lets Explore: {bookedTrip?.name} </h2>
+                            <p>Short Description: {bookedTrip?.desf}</p>
                             <h5>Name:{user.displayName}</h5>
                             <span>Email:</span>
                             <input {...register("email")} defaultValue={user.email}  />
